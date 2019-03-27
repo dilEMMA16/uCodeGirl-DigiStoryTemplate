@@ -7,17 +7,32 @@ body {
   font-family: 'Montserrat';
   font-size: 4.4rem;
   text-align: center;
-  background-color:#FFE53B;
+  background-color:#01B1AA;
   height: 100vh;
   font-weight: bold;
   padding: 20px;
-  padding-top: 35vh;
+  padding-top: 15vh;
+}
+.halftitle {
+  font-family: 'Montserrat';
+  font-size: 4.4rem;
+  text-align: center;
+  background-color:#B4015C;
+  height: 50vh;
+  font-weight: bold;
+  padding: 20px;
+  padding-top: 8vh;
 }
 
 #toptitle {
-  background-color: #FFE53B;
-  background-image: linear-gradient(180deg, #FFE53B 0%, #FF2525 74%);
+  background-color: #01b1aa;
+  background-image: linear-gradient(180deg, #01b1aa 25%, #712984 100%);
   /* For different gradients, go here: https://www.grabient.com/ */
+}
+
+#endpattern {
+  background-color: #b4015c;
+  background-image: linear-gradient(0deg, #b4015c 25%, #712984 100%);
 }
 
 .words {
@@ -45,4 +60,77 @@ body {
 img {
   width: 100vw;
   height: auto;
+}
+
+.listenbutton {
+  border:none;
+  background-color:inherit;
+  color: #d3d3d3;
+  font-size:24px;
+}
+
+#authorpic {
+  width: 200px;
+  height: auto;
+}
+
+#authorsection {
+  padding-top: 15vh;
+}
+
+p {
+  font-size: 0.5em;
+
+}
+
+/* to set initial display of pause buttons to none */
+.pausebutton {
+  display: none;
+}
+
+
+#scrollIcon {
+position: relative;
+font-size:70px;
+-webkit-animation-name: dance; /* Safari 4.0 - 8.0 */
+-webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+-webkit-animation-delay: 0s; /* Safari 4.0 - 8.0 */
+animation-name: dance;
+animation-duration: 3s;
+animation-delay: 0s;
+animation-iteration-count: infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes dance {
+
+0%  {   -ms-transform: rotate(-7deg); /* IE 9 */
+-webkit-transform: rotate(-7deg); /* Safari 3-8 */
+ transform: rotate(-7deg);}
+33%  {  -ms-transform: rotate(7deg); /* IE 9 */
+ -webkit-transform: rotate(7deg); /* Safari 3-8 */
+ transform: rotate(7deg);}
+66%  {  -ms-transform: rotate(7deg); /* IE 9 */
+ -webkit-transform: rotate(7deg); /* Safari 3-8 */
+ transform: rotate(7deg);}
+100% {  -ms-transform: rotate(-7deg); /* IE 9 */
+ -webkit-transform: rotate(-7deg); /* Safari 3-8 */
+ transform: rotate(-7deg);}}
+}
+
+/* Standard syntax */
+@keyframes dance {
+
+0%  {   -ms-transform: rotate(-7deg); /* IE 9 */
+ -webkit-transform: rotate(-7deg); /* Safari 3-8 */
+ transform: rotate(-7deg);}
+33%  {  -ms-transform: rotate(7deg); /* IE 9 */
+ -webkit-transform: rotate(7deg); /* Safari 3-8 */
+ transform: rotate(7deg);}
+66%  {  -ms-transform: rotate(7deg); /* IE 9 */
+ -webkit-transform: rotate(7deg); /* Safari 3-8 */
+ transform: rotate(7deg);}
+100% {  -ms-transform: rotate(-7deg); /* IE 9 */
+ -webkit-transform: rotate(-7deg); /* Safari 3-8 */
+ transform: rotate(-7deg);}}
 }

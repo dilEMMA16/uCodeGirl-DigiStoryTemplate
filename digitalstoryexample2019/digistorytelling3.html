@@ -15,6 +15,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
+  <!-- Font Awesome Links to use Icons -->
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
   <!-- FONTS = go to https://www.w3schools.com/howto/howto_google_fonts.asp for options! -->
   <!-- Font 1 from Google = Quattrocento-->
   <link href="https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans" rel="stylesheet">
@@ -31,15 +34,44 @@
 </head>
 <body>
 
+<!-- Audio for each page -->
+<audio id="page1audio">
+  <source src="audio/bensoundsummer.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio id="page2audio">
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio id="page3audio">
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+<!-- Page Content -->
 <div class="container-fluid">
   <div class="row" id="storytitlesection">
     <div class="col-sm-12 fulltitle" id="toptitle">
-      //YOUR TITLE HERE
+
+      <!-- <i class='far'>&#xf044;</i><br>
+      <br> -->
+      YOUR TITLE HERE IN YOUR FONT
+      <br><br>
+      <!-- BACKGROUND MUSIC https://www.bensound.com/royalty-free-music -->
+      <audio controls>
+        <source src="audio/bensoundsummer.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+      <br><br>
+      <p>(scroll down!)</p>
+      <i class="fa" id=scrollIcon>&#xf107;</i>
+
     </div>
   </div>
   <div class="row picturesection">
     <div class="col-sm-12 picture">
-      <img src="imgs/demo2.png" alt="Demo Image">
+      <img src="imgs/demoimg.png" alt="Demo Image">
     </div>
   </div>
 
@@ -51,7 +83,10 @@
   </div>
   <div class="row words">
     <div class="col-sm-12">
-      words for the page<br>
+      <button class="listenbutton" id="playButtonPage1" onclick="playAudio('playButtonPage1','pauseButtonPage1','page1audio')" type="button"><i class='far'>&#xf144;</i></button>
+      <button class="listenbutton pausebutton" id="pauseButtonPage1" onclick="pauseAudio('playButtonPage1','pauseButtonPage1','page1audio')" type="button"><i  class='far'>&#xf28b;</i></button>
+      <br><br>
+      words for the first page<br>
       __________________<br>
 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in vulputate neque. Nullam eleifend quis urna vel finibus.
@@ -66,12 +101,12 @@
   <!-- PAGE 2 -->
   <div class="row picturesection">
     <div class="col-sm-12 picture">
-      <img src="imgs/testimg.jpg" alt="Demo Image">
+      <img src="imgs/testimg2.jpg" alt="Demo Image">
     </div>
   </div>
   <div class="row words">
     <div class="col-sm-12">
-      words for the page<br>
+      words for the second page<br>
       __________________<br>
 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in vulputate neque. Nullam eleifend quis urna vel finibus.
@@ -87,12 +122,12 @@
   <!-- PAGE 3 -->
   <div class="row picturesection">
     <div class="col-sm-12 picture">
-      <img src="imgs/testimg.jpg" alt="Demo Image">
+      <img src="imgs/testimg3.jpg" alt="Demo Image">
     </div>
   </div>
   <div class="row words">
     <div class="col-sm-12">
-      words for the page<br>
+      words for the third page<br>
       __________________<br>
 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in vulputate neque. Nullam eleifend quis urna vel finibus.
@@ -104,15 +139,60 @@
     </div>
   </div>
 
-  <div class="row" id="storytitlesection">
-    <div class="col-sm-12 fulltitle" id="">
-      the end / thanks / author
+  <div class="row" id="end">
+    <div class="col-sm-12 halftitle" id=endpattern>
+      the end / end pattern
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-12 fulltitle" id="authorsection">
+      author name
+      <br><br>
+      <img src="imgs/author.png" class="img-circle" id=authorpic><br><br>
+      <p>short bio</p>
+    </div>
+  </div>
+
+  <div class="row" id="thanks">
+    <div class="col-sm-12 halftitle">
+      <i class="fas fa-cog fa-spin"></i><br>
+      <p>Thanks for experiencing my digi story!<br><br>
+      <em>Music Credit: Ben Sound</em></p>
     </div>
   </div>
 
   </div>
 
 </div>
+
+<script>
+
+  function playAudio(playbuttonid, pausebuttonid, audioid) {
+    //define audio to play
+    var audioToPlay = document.getElementById(audioid);
+    audioToPlay.play();
+
+    //hide play button
+    document.getElementById(playbuttonid).style.display = "none";
+
+    //show pause button
+    document.getElementById(pausebuttonid).style.display = "inline";
+  }
+
+  function pauseAudio(playbuttonid, pausebuttonid, audioid) {
+    //define audio to pause
+    var audioToPause = document.getElementById(audioid);
+    audioToPause.pause();
+
+    //show play button
+    document.getElementById(playbuttonid).style.display = "inline";
+
+    //hide pause button
+    document.getElementById(pausebuttonid).style.display = "none";
+  }
+</script>
 
 </body>
 </html>
