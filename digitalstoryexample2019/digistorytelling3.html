@@ -36,15 +36,15 @@
 
 <!-- Audio for each page -->
 <audio id="page1audio">
-  <source src="audio/bensoundsummer.mp3" type="audio/mpeg">
+  <source src="audio/bensound-hey.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 <audio id="page2audio">
-  <source src="horse.mp3" type="audio/mpeg">
+  <source src="audio/bensound-moose.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 <audio id="page3audio">
-  <source src="horse.mp3" type="audio/mpeg">
+  <source src="audio/bensound-funday.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
@@ -106,6 +106,9 @@
   </div>
   <div class="row words">
     <div class="col-sm-12">
+      <button class="listenbutton" id="playButtonPage2" onclick="playAudio('playButtonPage2','pauseButtonPage2','page2audio')" type="button"><i class='far'>&#xf144;</i></button>
+      <button class="listenbutton pausebutton" id="pauseButtonPage2" onclick="pauseAudio('playButtonPage2','pauseButtonPage2','page2audio')" type="button"><i  class='far'>&#xf28b;</i></button>
+      <br><br>
       words for the second page<br>
       __________________<br>
 
@@ -127,6 +130,9 @@
   </div>
   <div class="row words">
     <div class="col-sm-12">
+      <button class="listenbutton" id="playButtonPage3" onclick="playAudio('playButtonPage3','pauseButtonPage3','page3audio')" type="button"><i class='far'>&#xf144;</i></button>
+      <button class="listenbutton pausebutton" id="pauseButtonPage3" onclick="pauseAudio('playButtonPage3','pauseButtonPage3','page3audio')" type="button"><i  class='far'>&#xf28b;</i></button>
+      <br><br>
       words for the third page<br>
       __________________<br>
 
@@ -159,7 +165,7 @@
     <div class="col-sm-12 halftitle">
       <i class="fas fa-cog fa-spin"></i><br>
       <p>Thanks for experiencing my digi story!<br><br>
-      <em>Music Credit: Ben Sound</em></p>
+      <em>Music Credit: Bensound.com</em></p>
     </div>
   </div>
 
