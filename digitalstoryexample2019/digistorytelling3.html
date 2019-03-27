@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap links -->
+  <!-- Bootstrap links to help us have a responsive layout for our site -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -22,69 +22,79 @@
   <!-- Font 1 from Google = Quattrocento-->
   <link href="https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans" rel="stylesheet">
 
-  <!-- Font for story words from Google = Montserrat -->
+  <!-- Font 2 from Google = Montserrat -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
-  <!-- Our style sheet -->
+  <!-- Our style sheet where we can customize parts of our page further -->
   <link rel="stylesheet"  type="text/css" href="digistorytelling3.css">
 
   <!-- Our favicon = the small icon that appears next to your page's title on the tab! -->
   <!-- Make yours at https://www.favicon.cc/ , save it as favicon.ico in the same folder as this html document -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
-<body>
+<!-- Th onload function called makes sure the background music is set to a lower volume when the page is loaded so it doesn't get in the way of your story -->
+<body onload="setBackgroundMusicVolume()">
 
-<!-- Audio for each page -->
+<!-- Audio for each page = PUT THESE IN ORDER = 1, 2, 3, 4, etc. and keep the same format for the id's name! -->
 <audio id="page1audio">
+  <!-- Change this to your audio (voice over or music!) for Page 1! Make sure to put it in the audio folder! -->
   <source src="audio/bensound-hey.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 <audio id="page2audio">
+  <!-- Change this to your audio (voice over or music!) for Page 2! Make sure to put it in the audio folder! -->
   <source src="audio/bensound-moose.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 <audio id="page3audio">
+  <!-- Change this to your audio (voice over or music!) for Page 3! Make sure to put it in the audio folder! -->
   <source src="audio/bensound-funday.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 
-<!-- Page Content -->
+<!-- Page Content = using Bootstrap tags -->
 <div class="container-fluid">
+  <!-- This is the top title section of the site! -->
   <div class="row" id="storytitlesection">
     <div class="col-sm-12 fulltitle" id="toptitle">
-
-      <!-- <i class='far'>&#xf044;</i><br>
-      <br> -->
       YOUR TITLE HERE IN YOUR FONT
       <br><br>
       <!-- BACKGROUND MUSIC https://www.bensound.com/royalty-free-music -->
-      <audio controls>
+      <!-- We have it so there are controls to manipulate the background music and it plays continuously! -->
+      <audio id=backgroundmusic controls loop>
+        <!-- Change this to your audio for playing in the background of your story! Make sure to put it in the audio folder! -->
         <source src="audio/bensoundsummer.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
       </audio>
       <br><br>
       <p>(scroll down!)</p>
       <i class="fa" id=scrollIcon>&#xf107;</i>
-
     </div>
   </div>
+
+  <!-- This is a transition image from the title page to the start of your story! It can be a pattern, gradient, drawing, etc.! -->
   <div class="row picturesection">
     <div class="col-sm-12 picture">
-      <img src="imgs/demoimg.png" alt="Demo Image">
+      <!-- Replace this with your image! Make sure to change the alt text to describe your picture! -->
+      <img src="imgs/demoimg.png" alt="transition picture">
     </div>
   </div>
 
   <!-- PAGE 1 -->
   <div class="row picturesection">
     <div class="col-sm-12 picture">
-      <img src="imgs/testimg.jpg" alt="Demo Image">
+      <!-- Replace this with your image! Make sure to change the alt text to describe your picture! -->
+      <img src="imgs/testimg.jpg" alt="LEDs on a table">
     </div>
   </div>
   <div class="row words">
     <div class="col-sm-12">
-      <button class="listenbutton" id="playButtonPage1" onclick="playAudio('playButtonPage1','pauseButtonPage1','page1audio')" type="button"><i class='far'>&#xf144;</i></button>
-      <button class="listenbutton pausebutton" id="pauseButtonPage1" onclick="pauseAudio('playButtonPage1','pauseButtonPage1','page1audio')" type="button"><i  class='far'>&#xf28b;</i></button>
+      <!-- These are buttons that will be used to control the play/pause state of your music/voice over for the page! -->
+      <!-- We use Font Awesome icons to show the play and pause symbols (the funky looking jumble of characters/numbers),
+      and we call functions that we give the page number to when the play or pause buttons are clicked! -->
+      <button class="listenbutton" id="playButtonPage1" onclick="playAudio(1)" type="button"><i class='far'>&#xf144;</i></button>
+      <button class="listenbutton pausebutton" id="pauseButtonPage1" onclick="pauseAudio(1)" type="button"><i  class='far'>&#xf28b;</i></button>
       <br><br>
       words for the first page<br>
       __________________<br>
@@ -101,13 +111,17 @@
   <!-- PAGE 2 -->
   <div class="row picturesection">
     <div class="col-sm-12 picture">
-      <img src="imgs/testimg2.jpg" alt="Demo Image">
+      <!-- Replace this with your image! Make sure to change the alt text to describe your picture! -->
+      <img src="imgs/testimg2.jpg" alt="Push buttons on a table">
     </div>
   </div>
   <div class="row words">
     <div class="col-sm-12">
-      <button class="listenbutton" id="playButtonPage2" onclick="playAudio('playButtonPage2','pauseButtonPage2','page2audio')" type="button"><i class='far'>&#xf144;</i></button>
-      <button class="listenbutton pausebutton" id="pauseButtonPage2" onclick="pauseAudio('playButtonPage2','pauseButtonPage2','page2audio')" type="button"><i  class='far'>&#xf28b;</i></button>
+      <!-- These are buttons that will be used to control the play/pause state of your music/voice over for the page! -->
+      <!-- We use Font Awesome icons to show the play and pause symbols (the funky looking jumble of characters/numbers),
+      and we call functions that we give the page number to when the play or pause buttons are clicked! -->
+      <button class="listenbutton" id="playButtonPage2" onclick="playAudio(2)" type="button"><i class='far'>&#xf144;</i></button>
+      <button class="listenbutton pausebutton" id="pauseButtonPage2" onclick="pauseAudio(2)" type="button"><i  class='far'>&#xf28b;</i></button>
       <br><br>
       words for the second page<br>
       __________________<br>
@@ -125,13 +139,17 @@
   <!-- PAGE 3 -->
   <div class="row picturesection">
     <div class="col-sm-12 picture">
-      <img src="imgs/testimg3.jpg" alt="Demo Image">
+      <!-- Replace this with your image! Make sure to change the alt text to describe your picture! -->
+      <img src="imgs/testimg3.jpg" alt="Arduino Nano programmable circuit board on a table">
     </div>
   </div>
   <div class="row words">
     <div class="col-sm-12">
-      <button class="listenbutton" id="playButtonPage3" onclick="playAudio('playButtonPage3','pauseButtonPage3','page3audio')" type="button"><i class='far'>&#xf144;</i></button>
-      <button class="listenbutton pausebutton" id="pauseButtonPage3" onclick="pauseAudio('playButtonPage3','pauseButtonPage3','page3audio')" type="button"><i  class='far'>&#xf28b;</i></button>
+      <!-- These are buttons that will be used to control the play/pause state of your music/voice over for the page! -->
+      <!-- We use Font Awesome icons to show the play and pause symbols (the funky looking jumble of characters/numbers),
+      and we call functions that we give the page number to when the play or pause buttons are clicked! -->
+      <button class="listenbutton" id="playButtonPage3" onclick="playAudio(3)" type="button"><i class='far'>&#xf144;</i></button>
+      <button class="listenbutton pausebutton" id="pauseButtonPage3" onclick="pauseAudio(3)" type="button"><i  class='far'>&#xf28b;</i></button>
       <br><br>
       words for the third page<br>
       __________________<br>
@@ -145,22 +163,25 @@
     </div>
   </div>
 
+  <!-- Wrap up/summary section = THE END and/or a pattern to signal the end of the story-->
   <div class="row" id="end">
     <div class="col-sm-12 halftitle" id=endpattern>
-      the end / end pattern
+      The End w/ end pattern
     </div>
   </div>
 
-
+  <!-- A brief section about the author! -->
   <div class="row">
     <div class="col-sm-12 fulltitle" id="authorsection">
       author name
       <br><br>
+      <!-- This image is for you! Crop it to be square in proportions before using -->
       <img src="imgs/author.png" class="img-circle" id=authorpic><br><br>
-      <p>short bio</p>
+      <p>short bio here</p>
     </div>
   </div>
 
+  <!-- Thank your audience and give credit to any audio you used! -->
   <div class="row" id="thanks">
     <div class="col-sm-12 halftitle">
       <i class="fas fa-cog fa-spin"></i><br>
@@ -173,9 +194,31 @@
 
 </div>
 
+
+<!-- This is the JavaScript code to control the sounds of the page -->
 <script>
 
-  function playAudio(playbuttonid, pausebuttonid, audioid) {
+  function playAudio(pagenumber) {
+    //define all variables we will need based on the pagenumber
+    var pgnumber = pagenumber.toString();
+    var audioid = "page" + pgnumber + "audio";
+    var playbuttonid = "playButtonPage" + pgnumber;
+    var pausebuttonid = "pauseButtonPage" + pgnumber;
+
+    //Pause all audio but the background music and the current page's audio
+    //background music is the last audio element defined
+    //current page is passed in parameter
+    var sounds = document.getElementsByTagName('audio');
+    for(i=0; i<sounds.length-1; i++) {
+      if (i == pagenumber-1) //if on current page's audio's position in array
+      {
+        continue; //go to next loop iteration
+      }
+      else {
+        pauseAudio(i+1); //puase all other sounds
+      }
+    }
+
     //define audio to play
     var audioToPlay = document.getElementById(audioid);
     audioToPlay.play();
@@ -187,7 +230,13 @@
     document.getElementById(pausebuttonid).style.display = "inline";
   }
 
-  function pauseAudio(playbuttonid, pausebuttonid, audioid) {
+  function pauseAudio(pagenumber) {
+    //define all variables we will need based on the pagenumber
+    var pgnumber = pagenumber.toString();
+    var audioid = "page" + pgnumber + "audio";
+    var playbuttonid = "playButtonPage" + pgnumber;
+    var pausebuttonid = "pauseButtonPage" + pgnumber;
+
     //define audio to pause
     var audioToPause = document.getElementById(audioid);
     audioToPause.pause();
@@ -198,6 +247,13 @@
     //hide pause button
     document.getElementById(pausebuttonid).style.display = "none";
   }
+
+  function setBackgroundMusicVolume() {
+    var backgroundmusic = document.getElementById("backgroundmusic");
+    backgroundmusic.volume = 0.15;
+  }
+
+
 </script>
 
 </body>
