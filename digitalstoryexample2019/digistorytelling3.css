@@ -12,19 +12,19 @@ body {
   font-size: 4.4rem;
   text-align: center;
   background-color:#01B1AA;
-  height: 100vh;
+  min-height: 100vh;
   font-weight: bold;
-  padding: 20px;
+  padding: 30px;
   padding-top: 15vh;
 }
 
 /* Styles for end and thanks sections */
 .halftitle {
   font-family: 'Montserrat';
-  font-size: 4.4rem;
+  font-size: 3.3rem;
   text-align: center;
   background-color:#B4015C;
-  height: 50vh;
+  min-height: 50vh;
   font-weight: bold;
   padding: 20px;
   padding-top: 8vh;
